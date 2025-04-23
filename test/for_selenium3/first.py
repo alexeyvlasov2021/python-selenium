@@ -1,5 +1,4 @@
 from selenium import webdriver
-import time
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
@@ -12,10 +11,5 @@ driver.implicitly_wait(15)
 
 driver.get("https://itc.ua/ua/")
 
-consent_btn = driver.find_element(By.XPATH, '//button[@aria-label="Consent"]')
-accept_btn = driver.find_element(By.ID, 'cookie-accept')
-
-consent_btn.click()
-accept_btn.click()
-
-# driver.quit()
+btn_1 = driver.find_element(By.CSS_SELECTOR, "button[aria-label='Consent']")
+btn_1.click()
