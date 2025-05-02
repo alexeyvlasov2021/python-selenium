@@ -2,14 +2,17 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
-#options needed to keep browser opened after script is executed
 chrome_options = Options()
 chrome_options.add_experimental_option("detach", True)
 
 driver = webdriver.Chrome(chrome_options)
+
+# driver = webdriver.Chrome()
+
+driver.get("http://127.0.0.1:5500/index.html")
+
+driver.maximize_window()
 driver.implicitly_wait(15)
 
-driver.get("https://itc.ua/ua/")
-
-btn_1 = driver.find_element(By.CSS_SELECTOR, "button[aria-label='Consent']")
-btn_1.click()
+h1 = driver.find_element(By.CSS_SELECTOR, "h1")
+driver.execute_script("arguments[0].style.color = 'red'", h1)
