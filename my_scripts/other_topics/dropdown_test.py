@@ -7,6 +7,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 
+
 #options needed to keep browser opened after script is executed
 chrome_options = Options()
 chrome_options.add_experimental_option("detach", True)
